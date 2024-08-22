@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/artworksFragment">
+
+    <fragment
+        android:id="@+id/artworksFragment"
+        android:name="com.karim.framemedia.presentation.feature_list.ArtworksFragment"
+        android:label="Artworks"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_artworksFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment">
+            <argument
+                android:name="imageId"
+                android:defaultValue="@null"
+                app:nullable="true"
+                app:argType="string" />
+            <argument
+                android:name="title"
+                android:defaultValue="@null"
+                app:nullable="true"
+                app:argType="string" />
+            <argument
+                android:name="description"
+                android:defaultValue="@null"
+                app:nullable="true"
+                app:argType="string" />
+            <argument
+                android:name="authorName"
+                android:defaultValue="@null"
+                app:nullable="true"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.karim.framemedia.presentation.feature_details.DetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_details">
+    </fragment>
+</navigation>
